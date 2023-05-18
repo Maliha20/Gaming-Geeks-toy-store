@@ -50,7 +50,7 @@ const NavigationBar = () => {
         <ul className="menu menu-horizontal px-1">{navLists}</ul>
       </div>
       <div className="navbar-end">
-      <Link to="/login"><button className="btn text-amber-50 bg-yellow-950 btn-ghost px-4 md:me-12">Login</button></Link>
+      <Link to="/login"><button className="btn text-amber-100 bg-yellow-950 btn-ghost px-4 md:me-12">Login</button></Link>
       </div>
     </div>
     </div>

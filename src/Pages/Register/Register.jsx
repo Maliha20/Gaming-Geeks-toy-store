@@ -142,13 +142,13 @@ const Register = () => {
               <p className="my-4 text-red-500 font-semibold">{error}</p>
               <div className="form-control mt-6">
                 <button className="btn btn-ghost back-color text-amber-50 font-semibold">
-                  Login
+                  Register
                 </button>
               </div>
               <p className="my-4 text-yellow-50 font-semibold">
                 Already a member?
                 <Link to="/login" className="hover:text-amber-600">
-                  Login
+                 Login
                 </Link>
               </p>
             </form>
