@@ -1,15 +1,18 @@
 import React, { useContext, useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
-  const { UserSignIn } = useContext(AuthContext);
+  const { UserSignIn,googleLogin } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [display, setDisplay] = useState(false);
-  
+  const navigate = useNavigate()
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || '/'
+
   const handleSignIn =(event)=>{
     
     event.preventDefault();
@@ -32,8 +35,23 @@ const Login = () => {
       console.log(error)
       setError(error.message)
       setSuccess("")
-    })
+    }) 
    }
+   const handleGoogleLogin =()=>{
+    googleLogin()
+    .then(result=>{
+      const googleUser =result.user;
+      console.log(googleUser)
+      navigate(from,{replace : true})
+      setSuccess('successfuly logged in')
+      setError('')
+    })
+    .catch(error=>{
+      console.error()
+      setError(error.message)
+      setSuccess('')
+    })
+  }
   return (
     <div className="hero min-h-screen bg-gray-200">
       <div className="hero-content flex-col w-full ">
@@ -94,6 +112,7 @@ const Login = () => {
                   Register first
                 </Link>
               </p>
+              <p onClick={handleGoogleLogin} className="btn btn-link my-2 text-yellow-50 font-semibold">Google Login</p>
             </form>
           </div>
         </div>

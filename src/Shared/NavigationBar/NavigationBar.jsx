@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logogame.png";
 import ActiveRoute from "../../Pages/ActiveRoute/ActiveRoute";
 import "./NavigationBar.css";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const NavigationBar = () => {
-    const navLists = (
-        <>
-          <ActiveRoute to="/">Home</ActiveRoute>
-            <ActiveRoute to="/alltoys">All Toys</ActiveRoute>
-                <ActiveRoute to="/mytoys">My Toys</ActiveRoute>
-                <ActiveRoute to="/addtoy">Add a Toy</ActiveRoute>
-                <ActiveRoute to="/blogs">Blogs</ActiveRoute>
-        </>
-      );
+  const {user, userSignOut} =useContext(AuthContext)
+  const handleLogout =()=>{
+    userSignOut()
+    .then()
+    .catch((error) => {
+      console.log(error);
+    });
+  }
     return (
         <div className="bg-color w-full top-0 py-2">
         <div className="relative navbar py-16">
@@ -39,7 +39,15 @@ const NavigationBar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            {navLists}
+             <ActiveRoute to="/">Home</ActiveRoute>
+         <ActiveRoute to="/alltoys">All Toys</ActiveRoute>
+             {
+              user && <>
+              <ActiveRoute to="/mytoys">My Toys</ActiveRoute>
+             <ActiveRoute to="/addtoy">Add a Toy</ActiveRoute>
+              </> 
+             }
+             <ActiveRoute to="/blogs">Blogs</ActiveRoute>
           </ul>
         </div>
         <Link className="btn btn-ghost normal-case text-xl">
@@ -47,11 +55,28 @@ const NavigationBar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navLists}</ul>
+        <ul className="menu menu-horizontal px-1">
+        <ActiveRoute to="/">Home</ActiveRoute>
+         <ActiveRoute to="/alltoys">All Toys</ActiveRoute>
+             {
+              user && <>
+              <ActiveRoute to="/mytoys">My Toys</ActiveRoute>
+             <ActiveRoute to="/addtoy">Add a Toy</ActiveRoute>
+              </> 
+             }
+             <ActiveRoute to="/blogs">Blogs</ActiveRoute>
+          </ul>
       </div>
+      { user ? 
       <div className="navbar-end">
-      <Link to="/login"><button className="btn text-amber-100 bg-yellow-950 btn-ghost px-4 md:me-12">Login</button></Link>
-      </div>
+        <img className=" md:me-4 w-20 rounded-full border-4 border-yellow-100" title={user.displayName} src={user.photoURL}  alt="" />
+        <button onClick={handleLogout} className="btn text-yellow-100 bg-yellow-950 btn-ghost px-4 md:me-8">LogOut</button>
+         </div>
+       
+       : <div className="navbar-end">
+       <Link to="/login"><button className="btn text-yellow-100 bg-yellow-950 btn-ghost px-4 md:me-12">Login</button></Link>
+       </div>
+      }
     </div>
     </div>
     
