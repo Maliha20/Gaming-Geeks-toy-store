@@ -1,0 +1,16 @@
+.active{
+    color: rgb(235, 233, 172);
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 40px;
+  }
+  
+  .default{
+      margin-right: 40px;
+      text-decoration: none;
+      font-size: 20px;
+      color: rgb(85, 48, 0);
+      font-weight: bold;
+  
+  }
