@@ -6,7 +6,7 @@ import './Navbar.css'
 
 const Navbar = () => {
   return (
-   <div className="bg-color py-2">
+   <div className="bg-color absolute w-full top-0 py-2">
         <div className="my-4 mx-12 flex flex-col md:flex-row items-center justify-between">
       <div>
         <img className="w-56 h-40" src={logo} alt="" />
