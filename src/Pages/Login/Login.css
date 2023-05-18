@@ -1,0 +1,11 @@
+.bgImage{
+    background-image: url('../../assets/pexels-vlada-karpovich-6114991.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.back-color{
+    background-color: rgba(54, 39, 25, 0.888);
+}
+.input-color{
+background-color: rgba(248, 242, 200, 0.896);
+}

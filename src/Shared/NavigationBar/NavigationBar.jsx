@@ -2,21 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logogame.png";
 import ActiveRoute from "../../Pages/ActiveRoute/ActiveRoute";
-import "./Navbar.css";
+import "./NavigationBar.css";
 
-const Navbar = () => {
-  const navLists = (
-    <>
-      <ActiveRoute to="/">Home</ActiveRoute>
-        <ActiveRoute to="/alltoys">All Toys</ActiveRoute>
-            <ActiveRoute to="/mytoys">My Toys</ActiveRoute>
-            <ActiveRoute to="/addtoy">Add a Toy</ActiveRoute>
-            <ActiveRoute to="/blogs">Blogs</ActiveRoute>
-    </>
-  );
-
-  return (
-    <div className="absolute bg-color w-full top-0 py-2">
+const NavigationBar = () => {
+    const navLists = (
+        <>
+          <ActiveRoute to="/">Home</ActiveRoute>
+            <ActiveRoute to="/alltoys">All Toys</ActiveRoute>
+                <ActiveRoute to="/mytoys">My Toys</ActiveRoute>
+                <ActiveRoute to="/addtoy">Add a Toy</ActiveRoute>
+                <ActiveRoute to="/blogs">Blogs</ActiveRoute>
+        </>
+      );
+    return (
+        <div className="bg-color w-full top-0 py-2">
         <div className="relative navbar py-16">
       <div className="navbar-start items-center">
         <div className="dropdown">
@@ -56,8 +55,7 @@ const Navbar = () => {
     </div>
     </div>
     
-    
-  );
+    );
 };
 
-export default Navbar;
+export default NavigationBar;

@@ -15,7 +15,7 @@ const Carousel = () => {
         />
          <div className='text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
           <h2 className='text-6xl font-bold mb-5'>Conquer the board</h2>
-           <p className="text-center">the perfect blend of strategy, luck, and laughter</p>
+           <p className="text-center">with the perfect blend of strategy, luck, and laughter</p>
           </div>
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
           <a href="#slide4" className="btn btn-circle btn-ghost bg-yellow-850 hover:bg-yellow-950">
