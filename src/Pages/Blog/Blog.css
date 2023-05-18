@@ -1,0 +1,11 @@
+.bg-pic{
+    background-image: url('../../assets/peakpx.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.bg-base{
+    height:auto;
+    background-color: rgba(95, 88, 72, 0.641);
+}

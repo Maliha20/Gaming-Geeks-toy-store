@@ -3,7 +3,7 @@ import logo from '../../assets/logogame.png'
 import './Footer.css'
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-color text-base-content">
+     <footer className="mt-auto footer p-10 bg-color text-base-content">
   <div>
     <img className='md:w-56 md:h-40 w-28 h-28' src={logo} alt="" />
     <p className='font-bold text-xl text-yellow-950'>Gaming Geeks <br />

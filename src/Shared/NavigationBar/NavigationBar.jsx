@@ -40,14 +40,14 @@ const NavigationBar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
              <ActiveRoute to="/">Home</ActiveRoute>
-         <ActiveRoute to="/alltoys">All Toys</ActiveRoute>
+         <ActiveRoute to="/login/alltoys">All Toys</ActiveRoute>
              {
               user && <>
-              <ActiveRoute to="/mytoys">My Toys</ActiveRoute>
-             <ActiveRoute to="/addtoy">Add a Toy</ActiveRoute>
+              <ActiveRoute to="/login/mytoys">My Toys</ActiveRoute>
+             <ActiveRoute to="/login/addtoy">Add a Toy</ActiveRoute>
               </> 
              }
-             <ActiveRoute to="/blogs">Blogs</ActiveRoute>
+             <ActiveRoute to="/login/blogs">Blogs</ActiveRoute>
           </ul>
         </div>
         <Link className="btn btn-ghost normal-case text-xl">
@@ -56,27 +56,20 @@ const NavigationBar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-        <ActiveRoute to="/">Home</ActiveRoute>
-         <ActiveRoute to="/alltoys">All Toys</ActiveRoute>
+        <ActiveRoute to="/login/">Home</ActiveRoute>
+         <ActiveRoute to="/login/alltoys">All Toys</ActiveRoute>
              {
               user && <>
-              <ActiveRoute to="/mytoys">My Toys</ActiveRoute>
-             <ActiveRoute to="/addtoy">Add a Toy</ActiveRoute>
+              <ActiveRoute to="/login/mytoys">My Toys</ActiveRoute>
+             <ActiveRoute to="/login/addtoy">Add a Toy</ActiveRoute>
               </> 
              }
-             <ActiveRoute to="/blogs">Blogs</ActiveRoute>
+             <ActiveRoute to="/login/blogs">Blogs</ActiveRoute>
           </ul>
       </div>
-      { user ? 
       <div className="navbar-end">
-        <img className=" md:me-4 w-20 rounded-full border-4 border-yellow-100" title={user.displayName} src={user.photoURL}  alt="" />
-        <button onClick={handleLogout} className="btn text-yellow-100 bg-yellow-950 btn-ghost px-4 md:me-8">LogOut</button>
-         </div>
-       
-       : <div className="navbar-end">
-       <Link to="/login"><button className="btn text-yellow-100 bg-yellow-950 btn-ghost px-4 md:me-12">Login</button></Link>
-       </div>
-      }
+      <Link to="/login"><button className="btn text-amber-100 bg-yellow-950 btn-ghost px-4 md:me-12">Login</button></Link>
+      </div>
     </div>
     </div>
     

@@ -21,24 +21,8 @@ import PrivateRoute from './PrivateRoute';
         {
           path: "/",
           element:<Home></Home>
-        },
-        {
-         path: "/alltoys",
-         element:<AllToys></AllToys>
-        },
-        {
-          path: '/addtoy',
-          element:<PrivateRoute><AddToys></AddToys></PrivateRoute>
-        },
-        {
-          path: '/mytoys',
-          element:<MyToys></MyToys>
-        },
-
-        {
-          path: "/blogs",
-          element: <Blog></Blog>
         }
+        
     ]
     },
     {
@@ -52,7 +36,23 @@ import PrivateRoute from './PrivateRoute';
         {
           path: '/login/register',
           element:<Register></Register>
-        }
+        },
+        {
+          path: "/login/alltoys",
+          element:<AllToys></AllToys>
+         },
+         {
+           path: '/login/addtoy',
+           element:<PrivateRoute><AddToys></AddToys></PrivateRoute>
+         },
+         {
+           path: '/login/mytoys',
+           element:<MyToys></MyToys>
+         },
+         {
+           path: "/login/blogs",
+           element: <Blog></Blog>
+         }
       ]
     }
   ]);

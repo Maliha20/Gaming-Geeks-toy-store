@@ -7,15 +7,6 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
   const {user,userSignOut} =useContext(AuthContext)
-  // const navLists = (
-  //   <>
-  //     <ActiveRoute to="/">Home</ActiveRoute>
-  //       <ActiveRoute to="/alltoys">All Toys</ActiveRoute>
-  //           <ActiveRoute to="/mytoys">My Toys</ActiveRoute>
-  //           <ActiveRoute to="/addtoy">Add a Toy</ActiveRoute>
-  //           <ActiveRoute to="/blogs">Blogs</ActiveRoute>
-  //   </>
-  // );
   const handleLogout =()=>{
     userSignOut()
     .then()
@@ -50,14 +41,14 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
              <ActiveRoute to="/">Home</ActiveRoute>
-         <ActiveRoute to="/alltoys">All Toys</ActiveRoute>
+         <ActiveRoute to="/login/alltoys">All Toys</ActiveRoute>
              {
               user && <>
-              <ActiveRoute to="/mytoys">My Toys</ActiveRoute>
-             <ActiveRoute to="/addtoy">Add a Toy</ActiveRoute>
+              <ActiveRoute to="/login/mytoys">My Toys</ActiveRoute>
+             <ActiveRoute to="/login/addtoy">Add a Toy</ActiveRoute>
               </> 
              }
-             <ActiveRoute to="/blogs">Blogs</ActiveRoute>
+             <ActiveRoute to="/login/blogs">Blogs</ActiveRoute>
           </ul>
         </div>
         <Link className="btn btn-ghost normal-case text-xl">
@@ -67,14 +58,14 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
         <ActiveRoute to="/">Home</ActiveRoute>
-         <ActiveRoute to="/alltoys">All Toys</ActiveRoute>
+         <ActiveRoute to="/login/alltoys">All Toys</ActiveRoute>
             {
               user && <>
-               <ActiveRoute to="/mytoys">My Toys</ActiveRoute>
-             <ActiveRoute to="/addtoy">Add a Toy</ActiveRoute>
+               <ActiveRoute to="/login/mytoys">My Toys</ActiveRoute>
+             <ActiveRoute to="/login/addtoy">Add a Toy</ActiveRoute>
               </>
             }
-             <ActiveRoute to="/blogs">Blogs</ActiveRoute>
+             <ActiveRoute to="/login/blogs">Blogs</ActiveRoute>
           </ul>
       </div>
       { user ? 
