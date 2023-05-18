@@ -12,11 +12,13 @@ import LoginLayout from '../Layout/LoginLayout';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import PrivateRoute from './PrivateRoute';
+import Error from '../Pages/Error/Error';
 
   const router = createBrowserRouter([
     {
       path: "/",
       element:<MainLayout></MainLayout>,
+      errorElement:<Error></Error>,
       children: [
         {
           path: "/",
@@ -28,6 +30,7 @@ import PrivateRoute from './PrivateRoute';
     {
       path: '/login',
       element:<LoginLayout></LoginLayout>,
+      errorElement: <Error></Error>,
       children:[
         {
           path: '/login',

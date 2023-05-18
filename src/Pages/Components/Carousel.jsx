@@ -8,6 +8,7 @@ import img5 from '../../assets/puzzle.jpg'
 const Carousel = () => {
   return (
     <div className="carousel relative w-full h-[900px]">
+     
       <div id="slide1" className="relative carousel-item w-full">
         <img
           src={img3}

@@ -20,7 +20,7 @@ const NavigationBar = () => {
       <div className="navbar-start items-center">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
-            <svg
+          <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
               fill="none"
@@ -50,13 +50,12 @@ const NavigationBar = () => {
              <ActiveRoute to="/login/blogs">Blogs</ActiveRoute>
           </ul>
         </div>
-        <Link className="btn btn-ghost normal-case text-xl">
           <img className="md:w-56 md:h-40 w-28 h-28 absolute md:top-0 md:left-6 left-1/2 top-24 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0" src={logo} alt="" />
-        </Link>
+        
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-        <ActiveRoute to="/login/">Home</ActiveRoute>
+        <ActiveRoute to="/">Home</ActiveRoute>
          <ActiveRoute to="/login/alltoys">All Toys</ActiveRoute>
              {
               user && <>
