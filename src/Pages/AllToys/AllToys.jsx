@@ -3,8 +3,10 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Alltoy from "../Components/Alltoy";
 import './AllToys.css'
 const AllToys = () => {
+  
   const { user } = useContext(AuthContext);
   const [alltoys, setAlltoys] = useState([]);
+  
 
   useEffect(() => {
     fetch("http://localhost:5000/alltoys")
@@ -13,6 +15,10 @@ const AllToys = () => {
         setAlltoys(data);
       });
   }, []);
+
+  // const handleShowAll=()=>{
+  //   setShowAll(0)
+  // }
   return (
     <div>
       <h2 className="text-center text-3xl my-6 font-bold text-yellow-950">
@@ -41,6 +47,9 @@ const AllToys = () => {
             ))}
           </tbody>
         </table>
+        {/* <div className="my-12 flex justify-center mx-auto">
+        <button onClick={handleShowAll} className="btn btn-sm btn-ghost text-amber-50 bg-yellow-900">Show all</button>
+        </div> */}
       </div>
     </div>
   );
