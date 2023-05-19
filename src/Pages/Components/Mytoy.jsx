@@ -1,15 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Mytoy = ({mytoy}) => {
+const Mytoy = ({mytoy, index}) => {
     const { photo, name, subCategory, sellerName, price, quantity } = mytoy;
     return (
         <tr>
-      <th className="bg-amber-50">
-        <label>
-          <input type="checkbox" className="checkbox" />
-        </label>
-      </th>
+      <th scope="row" className="bg-amber-50">{index + 1}</th>
       <td className="bg-amber-50">
         <div className="flex items-center space-x-3">
           <div className="avatar">
@@ -32,7 +28,10 @@ const Mytoy = ({mytoy}) => {
       <td className="bg-amber-50">{'$'+ price}</td>
       <td className="bg-amber-50">{quantity}</td>
       <th className="bg-amber-50">
-       <Link to> <button className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs">View details</button></Link>
+       <Link to> <button className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs">Update</button></Link>
+      </th>
+      <th className="bg-amber-50">
+       <Link to> <button className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs">Delete</button></Link>
       </th>
     </tr>
     );

@@ -67,13 +67,13 @@ const NavigationBar = () => {
           </ul>
       </div>
       { user ? 
-      <div className="navbar-end">
-        <img className=" md:me-4 w-20 rounded-full border-4 border-yellow-100" title={user.displayName} src={user.photoURL}  alt="" />
+      <div className="flex flex-col md:flex-row ms-12 md:ms-0 navbar-end">
+        <img className="md:me-4 mb-4 md:mb-0 w-12 md:w-20 rounded-full border-4 border-yellow-100" title={user.displayName} src={user.photoURL}  alt="" />
         <button onClick={handleLogout} className="btn text-yellow-100 bg-yellow-950 btn-ghost px-4 md:me-8">LogOut</button>
          </div>
        
        : <div className="navbar-end">
-       <Link to="/login"><button className="btn text-yellow-100 bg-yellow-950 btn-ghost px-4 md:me-12">Login</button></Link>
+       <Link to="/login"><button className="btn text-yellow-100 bg-yellow-950 btn-ghost px-1 md:px-4 md:me-12">Login</button></Link>
        </div>
       }
     </div>

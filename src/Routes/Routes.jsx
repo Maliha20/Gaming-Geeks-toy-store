@@ -50,7 +50,7 @@ import Error from '../Pages/Error/Error';
          },
          {
            path: '/login/mytoys',
-           element:<MyToys></MyToys>
+           element:<PrivateRoute><MyToys></MyToys></PrivateRoute>
          },
          {
            path: "/login/blogs",
