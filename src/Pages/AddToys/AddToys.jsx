@@ -22,6 +22,7 @@ const AddToys = () => {
    .then(res=>res.json())
    .then(data=>{
     console.log(data)
+
 })
     
   }
@@ -66,7 +67,7 @@ const AddToys = () => {
           <input
             className="input-color p-4 rounded-md"
             {...register("rating", { required: true })}
-            placeholder="rating"
+            placeholder="rating(1-5)"
             type="number"
           />
           <input

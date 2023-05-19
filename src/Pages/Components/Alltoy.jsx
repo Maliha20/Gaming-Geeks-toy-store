@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Alltoy = ({ alltoy }) => {
   const { photo, name, subCategory, sellerName, price, quantity } = alltoy;
@@ -31,7 +32,7 @@ const Alltoy = ({ alltoy }) => {
       <td className="bg-amber-50">{'$'+ price}</td>
       <td className="bg-amber-50">{quantity}</td>
       <th className="bg-amber-50">
-        <button className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs">details</button>
+       <Link to> <button className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs">View details</button></Link>
       </th>
     </tr>
   );
