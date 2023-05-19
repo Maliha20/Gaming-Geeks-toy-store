@@ -66,9 +66,16 @@ const NavigationBar = () => {
              <ActiveRoute to="/login/blogs">Blogs</ActiveRoute>
           </ul>
       </div>
+      { user ? 
       <div className="navbar-end">
-      <Link to="/login"><button className="btn text-amber-100 bg-yellow-950 btn-ghost px-4 md:me-12">Login</button></Link>
-      </div>
+        <img className=" md:me-4 w-20 rounded-full border-4 border-yellow-100" title={user.displayName} src={user.photoURL}  alt="" />
+        <button onClick={handleLogout} className="btn text-yellow-100 bg-yellow-950 btn-ghost px-4 md:me-8">LogOut</button>
+         </div>
+       
+       : <div className="navbar-end">
+       <Link to="/login"><button className="btn text-yellow-100 bg-yellow-950 btn-ghost px-4 md:me-12">Login</button></Link>
+       </div>
+      }
     </div>
     </div>
     
