@@ -10,7 +10,22 @@ const AddToys = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  
+  const onSubmit = (data) =>{
+   fetch('http://localhost:5000/addtoy',{
+    method: "POST",
+    headers: {
+        "content-type": "application/json"
+    },
+    body: JSON.stringify(data)
+   })
+   .then(res=>res.json())
+   .then(data=>{
+    console.log(data)
+})
+    
+  }
+   
 
   return (
     <div>
@@ -62,7 +77,7 @@ const AddToys = () => {
           />
           <input
             className="input-color p-4 rounded-md"
-            {...register("seller name")}
+            {...register("sellerName")}
             placeholder="seller name"
             value={user?.displayName}
           />

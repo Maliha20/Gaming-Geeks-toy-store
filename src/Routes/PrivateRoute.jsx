@@ -8,32 +8,18 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
   if (loading) {
     return (
-      <div className='text-center my-5'>
+      <div className='mx-auto flex flex-col justify-center space-y-4 my-auto'>
         <progress
-          className="progress progress-warning w-56"
-          value="0"
-          max="100"
+          className="progress progress-info w-56"
+     ></progress>
+        <progress
+          className="progress progress-success w-56"
+         
         ></progress>
         <progress
           className="progress progress-warning w-56"
-          value="10"
-          max="100"
         ></progress>
-        <progress
-          className="progress progress-warning w-56"
-          value="40"
-          max="100"
-        ></progress>
-        <progress
-          className="progress progress-warning w-56"
-          value="70"
-          max="100"
-        ></progress>
-        <progress
-          className="progress progress-warning w-56"
-          value="100"
-          max="100"
-        ></progress>
+        
       </div>
     );
   }

@@ -69,7 +69,7 @@ const Navbar = () => {
           </ul>
       </div>
       { user ? 
-      <div className="navbar-end">
+      <div className="flex flex-col md:flex-row navbar-end">
         <img className=" md:me-4 w-20 rounded-full border-4 border-yellow-100" title={user.displayName} src={user.photoURL}  alt="" />
         <button onClick={handleLogout} className="btn text-yellow-100 bg-yellow-950 btn-ghost px-4 md:me-8">LogOut</button>
          </div>
