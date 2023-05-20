@@ -1,19 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const Mytoy = ({mytoy, index}) => {
-    const { photo, name, subCategory, sellerName, price, quantity } = mytoy;
-    return (
-        <tr>
-      <th scope="row" className="bg-amber-50">{index + 1}</th>
+const Mytoy = ({ mytoy, index,handleDelete }) => {
+  const { _id, photo, name, subCategory, sellerName, price, quantity } = mytoy;
+
+  return (
+    <tr>
+      <th scope="row" className="bg-amber-50">
+        {index + 1}
+      </th>
       <td className="bg-amber-50">
         <div className="flex items-center space-x-3">
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
-              <img
-                src={photo}
-                alt="Avatar Tailwind CSS Component"
-              />
+              <img src={photo} alt="Avatar Tailwind CSS Component" />
             </div>
           </div>
           <div>
@@ -22,19 +22,27 @@ const Mytoy = ({mytoy, index}) => {
           </div>
         </div>
       </td>
-      <td className="bg-amber-50">
-       {sellerName}
-      </td>
-      <td className="bg-amber-50">{'$'+ price}</td>
+      <td className="bg-amber-50">{sellerName}</td>
+      <td className="bg-amber-50">{"$" + price}</td>
       <td className="bg-amber-50">{quantity}</td>
       <th className="bg-amber-50">
-       <Link to> <button className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs">Update</button></Link>
+        <Link to>
+          {" "}
+          <button className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs">
+            Update
+          </button>
+        </Link>
       </th>
       <th className="bg-amber-50">
-       <Link to> <button className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs">Delete</button></Link>
+        <button
+          onClick={() => handleDelete(_id)}
+          className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs"
+        >
+          Delete
+        </button>
       </th>
     </tr>
-    );
+  );
 };
 
 export default Mytoy;

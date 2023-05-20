@@ -2,18 +2,47 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import './MyToys.css'
 import Mytoy from '../Components/Mytoy';
+import Swal from "sweetalert2";
 const MyToys = () => {
     const {user}= useContext(AuthContext);
     const [mytoys, setMytoys] =useState([])
-
-
+ 
     useEffect(()=>{
-          fetch(`http://localhost:5000/mytoys/${user?.email}`)
+          fetch(`http://localhost:5000/addtoy/${user?.email}`)
           .then(res=>res.json())
           .then(data=>{
             setMytoys(data)
           })
     },[user])
+
+    const handleDelete = (id) => {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          fetch(`http://localhost:5000/addtoy/${id}`, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.deletedCount > 0) {
+                Swal.fire("Deleted!", "Your post has been deleted.", "success");
+
+                const remaining= mytoys.filter(mytoy=> mytoy._id !== id)
+                setMytoys(remaining)
+              }
+            });
+        }
+      });
+    };
+
     return (
         <div>
            <h2 className="text-center text-3xl my-6 font-bold text-yellow-950">
@@ -36,7 +65,7 @@ const MyToys = () => {
           </thead>
           <tbody>
             {mytoys.map((mytoy, index) => (
-             <Mytoy key={mytoy._id} mytoy={mytoy} index={index}></Mytoy>
+             <Mytoy key={mytoy._id} mytoy={mytoy} handleDelete={handleDelete} index={index}></Mytoy>
             ))}
           </tbody>
         </table>
