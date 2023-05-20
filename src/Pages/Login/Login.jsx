@@ -115,7 +115,7 @@ const Login = () => {
                   Register first
                 </Link>
               </p>
-              <p onClick={handleGoogleLogin} className="btn btn-link my-2 text-yellow-50 font-semibold">Google Login</p>
+              <p onClick={handleGoogleLogin} className="back-color btn btn-link my-2 text-yellow-50 font-semibold">Google Login</p>
             </form>
           </div>
         </div>

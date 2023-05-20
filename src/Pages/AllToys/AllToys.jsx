@@ -26,9 +26,6 @@ const AllToys = () => {
   })
  }
 
-  // const handleShowAll=()=>{
-  //   setShowAll(0)
-  // }
   return (
     <div>
       <h2 className="text-center text-3xl my-6 font-bold text-yellow-950">
@@ -49,11 +46,7 @@ const AllToys = () => {
           {/* head */}
           <thead>
             <tr>
-              <th className="back-color">
-                <label>
-                  <input type="checkbox" />
-                </label>
-              </th>
+            
               <th className="back-color text-amber-50">Name</th>
               <th className="back-color text-amber-50">Seller's Name</th>
               <th className="back-color text-amber-50">Price</th>

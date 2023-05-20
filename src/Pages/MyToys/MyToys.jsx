@@ -45,22 +45,6 @@ const MyToys = () => {
       });
     };
 
-    // const handleUpdate =(id)=>{
-    //   fetch(`http://localhost:5000/addtoy/${id}`,{
-    //     method: "PUT",
-    //     headers: {
-    //       'content-type' : 'application/json'
-    //     },
-    //     body: JSON.stringify({status: 'confirm'})
-    //   })
-    //   .then(res=>res.json())
-    //   .then(data=>{
-    //       console.log(data)
-    //       if(data.modifiedCount>0){
-    //         // Swal.fire("Updated!", "Your post has been Updated.", "success");
-    //       }
-    //   })
-    // }
 
     return (
         <div>
@@ -75,9 +59,13 @@ const MyToys = () => {
             <tr>
               <th scope='col' className="back-color text-2xl text-amber-50">#</th>
               <th scope='col' className="back-color text-amber-50">Name</th>
-              <th scope='col' className="back-color text-amber-50">Seller's Name</th>
               <th scope='col' className="back-color text-amber-50">Price</th>
+              <th scope='col' className="back-color text-amber-50">Description</th>
               <th scope='col' className="back-color text-amber-50">Quantity</th>
+              <th scope='col' className="back-color text-amber-50">Sub Category</th>
+              <th scope='col' className="back-color text-amber-50">Seller's Name</th>
+              <th scope='col' className="back-color text-amber-50">Seller's Mail</th>
+              <th scope='col' className="back-color text-amber-50">Rating</th>
               <th scope='col' className="back-color text-amber-50">Update</th>
               <th scope='col' className="back-color text-amber-50">Delete</th>
             </tr>
@@ -85,6 +73,7 @@ const MyToys = () => {
           <tbody>
             {mytoys.map((mytoy, index) => (
              <Mytoy key={mytoy._id} mytoy={mytoy} handleDelete={handleDelete} index={index}></Mytoy>
+             
             ))}
           </tbody>
         </table>

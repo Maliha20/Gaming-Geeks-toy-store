@@ -5,8 +5,7 @@ import '@smastrom/react-rating/style.css'
 import { useLoaderData } from "react-router-dom";
 const ViewDetails = () => {
   const toyData = useLoaderData();
-  console.log(toyData);
-  const { name, photo, price, description, rating, sellerName, subCategory } =
+  const { name, photo, price, description, rating, quantity, sellerName, sellersMail ,subCategory } =
     toyData;
 
   return (
@@ -26,11 +25,13 @@ const ViewDetails = () => {
               <div className="badge badge-secondary">NEW</div>
             </h2>
             <p className="font-semibold text-xl">Description: {description}</p>
+            <p className="font-semibold text-xl">Category: {subCategory}</p>
+            <p className="font-semibold text-xl">Price: ${price}</p>
             <div className="card-actions justify-end">
               <div className="badge badge-outline text-md">
-                Category: {subCategory}
+                Seller: {sellerName}
               </div>
-              <div className="badge badge-outline text-md">Price: ${price}</div>
+              <div className="badge badge-outline text-md">Email: ${sellersMail}</div>
             </div>
             <div>
             <Rating style={{ maxWidth: 100 }} value={rating} readOnly />

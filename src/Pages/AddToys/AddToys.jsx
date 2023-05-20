@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import './AddToys.css'
 import { AuthContext } from "../../Provider/AuthProvider";
 import useTitle from "../../hooks/useTitle";
+import Swal from "sweetalert2";
 const AddToys = () => {
   useTitle('Add Toy')
     const {user}=useContext(AuthContext)
@@ -23,6 +24,7 @@ const AddToys = () => {
    })
    .then(res=>res.json())
    .then(data=>{
+    Swal.fire("Added!", "Your post has been Added.", "success");
     console.log(data)
 
 })

@@ -1,8 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import UpdateToy from "./UpdateToy";
 
-const Mytoy = ({ mytoy, index,handleDelete,handleUpdate }) => {
-  const { _id, photo, name, subCategory, sellerName, price, quantity } = mytoy;
+const Mytoy = ({ mytoy, index, handleDelete, handleToyUpdate }) => {
+  const {
+    _id,
+    photo,
+    name,
+    subCategory,
+    rating,
+    sellersMail,
+    description,
+    sellerName,
+    price,
+    quantity,
+  } = mytoy;
 
   return (
     <tr>
@@ -22,15 +34,27 @@ const Mytoy = ({ mytoy, index,handleDelete,handleUpdate }) => {
           </div>
         </div>
       </td>
-      <td className="bg-amber-50">{sellerName}</td>
       <td className="bg-amber-50">{"$" + price}</td>
+      <td title={description} className="bg-amber-50">
+        {description.length < 15 ? (
+          <>{description}</>
+        ) : (
+          <>{description.slice(0, 15)}...</>
+        )}
+      </td>
       <td className="bg-amber-50">{quantity}</td>
+      <td className="bg-amber-50">{subCategory}</td>
+      <td className="bg-amber-50">{sellerName}</td>
+      <td className="bg-amber-50">{sellersMail}</td>
+      <td className="bg-amber-50">{rating}</td>
       <th className="bg-amber-50">
-        <Link to="/login/updatetoy">
-          <button onClick={()=>handleUpdate(_id)} className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs">
-            Update
-          </button>
-        </Link>
+        {
+          <Link to={`/login/updateToy/${_id}`}>
+            <button className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs">
+              Update
+            </button>
+          </Link>  
+        }
       </th>
       <th className="bg-amber-50">
         <button

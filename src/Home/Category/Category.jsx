@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Category = ({ alltoy }) => {
-  const { price, name, photo, rating } = alltoy;
+  const { _id, price, name, photo, rating } = alltoy;
   return (
     
       <div className="my-12 p-3 shadow-2xl card w-96 border-4 bg-stone-200 border-yellow-900" data-aos="fade-left">
@@ -17,7 +18,7 @@ const Category = ({ alltoy }) => {
           <p className="text-yellow-900 text-xl font-semibold">Price: {price}</p>
           <p className="text-yellow-900 text-xl font-semibold">Rating:{rating}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-ghost bg-stone-600 text-amber-50">View details</button>
+          <Link to={`/login/toy/${_id}`}> <button className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs">View details</button></Link>
           </div>
         </div>
       </div>

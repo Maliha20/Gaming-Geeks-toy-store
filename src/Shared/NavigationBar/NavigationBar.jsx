@@ -4,10 +4,12 @@ import logo from "../../assets/logogame.png";
 import ActiveRoute from "../../Pages/ActiveRoute/ActiveRoute";
 import "./NavigationBar.css";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const NavigationBar = () => {
   const {user, userSignOut} =useContext(AuthContext)
   const handleLogout =()=>{
+    
     userSignOut()
     .then()
     .catch((error) => {

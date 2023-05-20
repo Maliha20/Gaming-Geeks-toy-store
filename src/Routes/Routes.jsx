@@ -13,8 +13,8 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import PrivateRoute from './PrivateRoute';
 import Error from '../Pages/Error/Error';
-import UpdateToy from '../Pages/UpdateToy/UpdateToy';
 import ViewDetails from '../Pages/ViewDetails/ViewDetails';
+import UpdateToy from '../Pages/Components/UpdateToy';
 
 
   const router = createBrowserRouter([
@@ -52,7 +52,12 @@ import ViewDetails from '../Pages/ViewDetails/ViewDetails';
            element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
            loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
         },
-          
+          { 
+            path: 'updateToy/:id',
+           element: <UpdateToy></UpdateToy>,
+          loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
+
+          },
         
          {
            path: '/login/addtoy',
@@ -61,10 +66,6 @@ import ViewDetails from '../Pages/ViewDetails/ViewDetails';
          {
            path: '/login/mytoys',
            element:<PrivateRoute><MyToys></MyToys></PrivateRoute>
-         },
-         {
-               path:'/login/updatetoy',
-               element:<UpdateToy></UpdateToy>
          },
          {
            path: "/login/blogs",
