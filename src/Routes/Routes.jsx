@@ -13,6 +13,7 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import PrivateRoute from './PrivateRoute';
 import Error from '../Pages/Error/Error';
+import UpdateToy from '../Pages/UpdateToy/UpdateToy';
 
   const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ import Error from '../Pages/Error/Error';
          {
            path: '/login/mytoys',
            element:<PrivateRoute><MyToys></MyToys></PrivateRoute>
+         },
+         {
+               path:'/login/updatetoy',
+               element:<UpdateToy></UpdateToy>
          },
          {
            path: "/login/blogs",

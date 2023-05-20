@@ -4,7 +4,7 @@ const Category = ({ alltoy }) => {
   const { price, name, photo, rating } = alltoy;
   return (
     
-      <div className="my-12 p-3 shadow-2xl card w-96 border-4 bg-stone-200 border-yellow-900 ">
+      <div className="my-12 p-3 shadow-2xl card w-96 border-4 bg-stone-200 border-yellow-900" data-aos="fade-left">
         <figure>
           <img className="rounded-xl shadow-lg"
             src={photo}

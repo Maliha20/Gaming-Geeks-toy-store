@@ -43,6 +43,23 @@ const MyToys = () => {
       });
     };
 
+    // const handleUpdate =(id)=>{
+    //   fetch(`http://localhost:5000/addtoy/${id}`,{
+    //     method: "PUT",
+    //     headers: {
+    //       'content-type' : 'application/json'
+    //     },
+    //     body: JSON.stringify({status: 'confirm'})
+    //   })
+    //   .then(res=>res.json())
+    //   .then(data=>{
+    //       console.log(data)
+    //       if(data.modifiedCount>0){
+    //         // Swal.fire("Updated!", "Your post has been Updated.", "success");
+    //       }
+    //   })
+    // }
+
     return (
         <div>
            <h2 className="text-center text-3xl my-6 font-bold text-yellow-950">

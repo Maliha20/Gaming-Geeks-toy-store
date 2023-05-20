@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Mytoy = ({ mytoy, index,handleDelete }) => {
+const Mytoy = ({ mytoy, index,handleDelete,handleUpdate }) => {
   const { _id, photo, name, subCategory, sellerName, price, quantity } = mytoy;
 
   return (
@@ -26,9 +26,8 @@ const Mytoy = ({ mytoy, index,handleDelete }) => {
       <td className="bg-amber-50">{"$" + price}</td>
       <td className="bg-amber-50">{quantity}</td>
       <th className="bg-amber-50">
-        <Link to>
-          {" "}
-          <button className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs">
+        <Link to="/login/updatetoy">
+          <button onClick={()=>handleUpdate(_id)} className="bg-yellow-950 text-amber-50 btn btn-ghost btn-xs">
             Update
           </button>
         </Link>

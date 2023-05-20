@@ -21,7 +21,7 @@ const Categories = () => {
 
   return (
     <div className="my-16 mx-auto">
-      <div className="text-center text-3xl my-6 font-bold text-yellow-950">
+      <div className="text-center text-3xl my-6 font-bold text-yellow-950"  data-aos="fade-down">
         Shop By Categories
       </div>
 
@@ -59,7 +59,7 @@ const Categories = () => {
       </TabList>
       <Tabs className="mx-auto container">
         <TabPanel>
-          <div className="flex flex-col md:flex-row  justify-center gap-4">
+          <div className="flex flex-col md:flex-row  justify-center gap-4" >
             {alltoys.map((alltoy) => (
               <Category key={alltoy._id} alltoy={alltoy}></Category>
             ))}
