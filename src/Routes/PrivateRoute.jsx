@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
 import { FaBell } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -26,6 +27,8 @@ const PrivateRoute = ({ children }) => {
   if (user) {
     return children;
   } else {
+   
+    Swal.fire('You need to login first to get access to the page')
     return <Navigate state={{ from: location }} to="/login" replace></Navigate>;
   }
 };

@@ -14,6 +14,8 @@ import Register from '../Pages/Register/Register';
 import PrivateRoute from './PrivateRoute';
 import Error from '../Pages/Error/Error';
 import UpdateToy from '../Pages/UpdateToy/UpdateToy';
+import ViewDetails from '../Pages/ViewDetails/ViewDetails';
+
 
   const router = createBrowserRouter([
     {
@@ -43,8 +45,15 @@ import UpdateToy from '../Pages/UpdateToy/UpdateToy';
         },
         {
           path: "/login/alltoys",
-          element:<AllToys></AllToys>
-         },
+          element:<AllToys></AllToys>,
+        },
+        {
+           path: 'toy/:id',
+           element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+           loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
+        },
+          
+        
          {
            path: '/login/addtoy',
            element:<PrivateRoute><AddToys></AddToys></PrivateRoute>
