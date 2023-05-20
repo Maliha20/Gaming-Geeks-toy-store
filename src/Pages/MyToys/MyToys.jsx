@@ -3,7 +3,9 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import './MyToys.css'
 import Mytoy from '../Components/Mytoy';
 import Swal from "sweetalert2";
+import useTitle from '../../hooks/useTitle';
 const MyToys = () => {
+  useTitle("My Toys")
     const {user}= useContext(AuthContext);
     const [mytoys, setMytoys] =useState([])
  

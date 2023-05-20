@@ -2,8 +2,10 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaEye, FaEyeSlash,  } from 'react-icons/fa';
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
+  useTitle('Register')
   const { createUser, profileUpdate, profileData } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");

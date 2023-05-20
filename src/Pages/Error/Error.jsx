@@ -1,8 +1,10 @@
 import React from 'react';
 import gif from '../../assets/chessgoat.gif'
 import { Link, useRouteError } from 'react-router-dom'
+import useTitle from '../../hooks/useTitle';
 
 const Error = () => {
+    useTitle('Error')
     const { error, status } = useRouteError()
     return (
         <div className='flex justify-center items-center h-screen p-16 bg-stone-200 text-gray-900'>

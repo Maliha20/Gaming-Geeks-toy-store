@@ -3,8 +3,10 @@ import "./Login.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
+  useTitle('Login')
   const { UserSignIn,googleLogin } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -12,7 +14,7 @@ const Login = () => {
   const navigate = useNavigate()
   const location = useLocation();
   const from = location?.state?.from?.pathname || '/'
-
+  
   const handleSignIn =(event)=>{
     
     event.preventDefault();

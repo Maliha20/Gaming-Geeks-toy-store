@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 const UpdateToy = () => {
+    useTitle('Update Toy')
     const {user}=useContext(AuthContext)
     const {
       register,

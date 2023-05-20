@@ -1,7 +1,9 @@
 import React from "react";
 import "./Blog.css";
+import useTitle from "../../hooks/useTitle";
 
 const Blog = () => {
+  useTitle('Blog')
   return (
     <div className="my-12 container mx-auto">
       <div className="gap-4 grid grid-cols-1 md:grid-cols-2">
