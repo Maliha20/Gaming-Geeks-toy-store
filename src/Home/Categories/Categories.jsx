@@ -7,7 +7,7 @@ const Categories = () => {
   const [active, setActive] = useState("scrabble");
 
   useEffect(() => {
-    fetch(`https://toy-store-server-five.vercel.app/alltoys/${active}`)
+    fetch(` https://toy-store-server-five.vercel.app/alltoys/${active}`)
       .then((res) => res.json())
       .then((data) => {
         setAlltoys(data.slice(0, 2));

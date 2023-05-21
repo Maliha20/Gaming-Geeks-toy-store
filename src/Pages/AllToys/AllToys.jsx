@@ -11,15 +11,16 @@ const AllToys = () => {
   const [searchText,setSearchText] =useState("")
 
   useEffect(() => {
-    fetch("https://toy-store-server-five.vercel.app/alltoys")
+    fetch(" https://toy-store-server-five.vercel.app/alltoys")
       .then((res) => res.json())
       .then((data) => {
         setAlltoys(data);
       });
   }, []);
 
+
  const handleSearch =()=>{
-  fetch(`https://toy-store-server-five.vercel.app/toySearchbyName/${searchText}`)
+  fetch(` https://toy-store-server-five.vercel.app/toySearchbyName/${searchText}`)
   .then(res=>res.json())
   .then(data=>{
     setAlltoys(data)
@@ -60,9 +61,7 @@ const AllToys = () => {
             ))}
           </tbody>
         </table>
-        {/* <div className="my-12 flex justify-center mx-auto">
-        <button onClick={handleShowAll} className="btn btn-sm btn-ghost text-amber-50 bg-yellow-900">Show all</button>
-        </div> */}
+    
       </div>
     </div>
   );

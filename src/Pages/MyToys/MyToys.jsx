@@ -12,7 +12,7 @@ const MyToys = () => {
  
 
   useEffect(() => {
-    fetch(`https://toy-store-server-five.vercel.app/addtoy/${user?.email}`)
+    fetch(` https://toy-store-server-five.vercel.app/addtoy/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
       setMytoys(data);
@@ -21,14 +21,6 @@ const MyToys = () => {
   }, [user]);
    
  
-    
-//  const handleLow=()=>{
-// if(data){
-//   setMytoys(data.descendingResult)
-//  }
-// }
-
-
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -40,7 +32,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://toy-store-server-five.vercel.app/addtoy/${id}`, {
+        fetch(` https://toy-store-server-five.vercel.app/addtoy/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -62,7 +54,7 @@ const MyToys = () => {
       <h2 className="text-center text-3xl my-6 font-bold text-yellow-950">
         My Toys
       </h2>
-      {/* <div className="container mx-auto dropdown flex flex-col md:flex-row justify-end ">
+      <div className="container mx-auto dropdown flex flex-col md:flex-row justify-end ">
           <label tabIndex={0} className="text-yellow-900 font-semibold  btn btn-ghost m-1">
             Sort By Price:  <FaArrowDown className="text-yellow-900 mx-2"></FaArrowDown>
           </label>
@@ -70,14 +62,14 @@ const MyToys = () => {
             tabIndex={0}
             className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
           >
-             <li onClick={()=>handleHigh(data)}>
+             <li onClick={()=>handleHigh()}>
               <a>Higher to lower</a>
             </li>
             <li onClick={handleLow}>
               <a>Lower to higher</a>
             </li>
           </ul>
-        </div> */}
+        </div>
 
       <div className="overflow-x-auto container my-12 mx-auto w-full">
        

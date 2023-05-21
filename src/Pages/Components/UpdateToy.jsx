@@ -19,7 +19,7 @@ const UpdateToy = () => {
 
     const handleUpdate = (data) => {
      
-      fetch(`https://toy-store-server-five.vercel.app/updateToy/${data._id}`, {
+      fetch(` https://toy-store-server-five.vercel.app/updateToy/${data._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
