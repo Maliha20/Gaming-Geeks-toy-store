@@ -5,9 +5,9 @@ import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const UpdateToy = () => {
- const dataUpdate = useLoaderData()
- console.log(dataUpdate)
- const {user}=useContext(AuthContext)
+ const toyUpdate = useLoaderData()
+ console.log(toyUpdate)
+ 
     const {
       register,
       handleSubmit,
@@ -47,7 +47,7 @@ const UpdateToy = () => {
              <input
             className="text-input hidden "
             {...register("_id")}
-            value={dataUpdate?._id}
+            value={toyUpdate?._id}
           />
 
           <input
@@ -55,14 +55,14 @@ const UpdateToy = () => {
             {...register("description")}
             placeholder="description"
             type="text"
-            defaultValue={dataUpdate?.description}
+            defaultValue={toyUpdate?.description}
           />
           <input
             className="input-color p-4 rounded-md"
             {...register("price", { required: true })}
             placeholder="price"
             type="number"
-            defaultValue={dataUpdate?.price}
+            defaultValue={toyUpdate?.price}
           />
         
           <input
@@ -70,7 +70,7 @@ const UpdateToy = () => {
             {...register("quantity", { required: true })}
             placeholder="quantity"
             type="number"
-            defaultValue={dataUpdate?.quantity}
+            defaultValue={toyUpdate?.quantity}
           />
     
         </div>

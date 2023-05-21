@@ -39,7 +39,7 @@ const Mytoy = ({ mytoy, index, handleDelete, handleToyUpdate }) => {
         {description.length < 15 ? (
           <>{description}</>
         ) : (
-          <>{description.slice(0, 15)}...</>
+          <>{description.slice(0, 15)}...<Link to={`/login/toy/${_id}`} className="text-semibold text-yellow-500/80">Read more</Link></>
         )}
       </td>
       <td className="bg-amber-50">{quantity}</td>
