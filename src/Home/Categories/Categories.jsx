@@ -10,8 +10,8 @@ const Categories = () => {
     fetch(` https://toy-store-server-five.vercel.app/alltoys/${active}`)
       .then((res) => res.json())
       .then((data) => {
-        setAlltoys(data.slice(0, 2));
-        console.log(data.slice(0, 2));
+        setAlltoys(data.slice(0,2));
+        console.log(data.slice(0,2));
       });
   }, [active]);
 

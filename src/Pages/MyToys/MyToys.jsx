@@ -9,16 +9,16 @@ const MyToys = () => {
   useTitle("My Toys");
   const { user } = useContext(AuthContext);
   const [mytoys, setMytoys] = useState([]);
- 
+  const [sort, setSort] = useState('lowtohigh');
 
   useEffect(() => {
-    fetch(` https://toy-store-server-five.vercel.app/addtoy/${user?.email}`)
+    fetch(`https://toy-store-server-five.vercel.app/addtoy/${user?.email}?sort=${sort}`)
       .then((res) => res.json())
       .then((data) => {
       setMytoys(data);
        
       });
-  }, [user]);
+  }, [user,sort]);
    
  
   const handleDelete = (id) => {
@@ -63,10 +63,10 @@ const MyToys = () => {
             className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
           >
              <li>
-              <a>Higher to lower</a>
+              <a onClick={() => setSort('hightolow')}>Higher to lower</a>
             </li>
             <li>
-              <a>Lower to higher</a>
+              <a onClick={() => setSort('lowtohigh')}>Lower to higher</a>
             </li>
           </ul>
         </div>
