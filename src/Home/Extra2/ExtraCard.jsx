@@ -5,7 +5,7 @@ const ExtraCard = ({ review }) => {
   const { rating, img, review_text, game_title } = review;
   return (
     <div>
-      <div className="bg-amber-900/20 card md:w-96 h-full bg-base-100 shadow-xl">
+      <div className="bg-amber-900/10 card md:w-96 h-full bg-base-100 shadow-xl">
         <figure>
           <img className="p-5 rounded-xl h-96"
             src={img}
