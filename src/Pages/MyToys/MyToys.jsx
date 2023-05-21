@@ -62,10 +62,10 @@ const MyToys = () => {
             tabIndex={0}
             className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
           >
-             <li onClick={()=>handleHigh()}>
+             <li>
               <a>Higher to lower</a>
             </li>
-            <li onClick={handleLow}>
+            <li>
               <a>Lower to higher</a>
             </li>
           </ul>
