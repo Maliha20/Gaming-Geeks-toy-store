@@ -3,7 +3,7 @@ import './Gallery.css'
 const Gallery = () => {
     const [images, setImages] =useState([])
     useEffect(()=>{
-        fetch("/public/gallery.json")
+        fetch("/gallery.json")
         .then(res=>res.json())
         .then(data=>setImages(data))
     },[])

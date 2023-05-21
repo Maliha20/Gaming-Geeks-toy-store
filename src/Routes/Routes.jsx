@@ -50,12 +50,12 @@ import UpdateToy from '../Pages/Components/UpdateToy';
         {
            path: 'toy/:id',
            element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-           loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
+           loader:({params})=>fetch(`https://toy-store-server-five.vercel.app/toy/${params.id}`)
         },
           { 
             path: 'updateToy/:id',
            element: <UpdateToy></UpdateToy>,
-          loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
+          loader:({params})=>fetch(`https://toy-store-server-five.vercel.app/toy/${params.id}`)
 
           },
         

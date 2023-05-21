@@ -4,7 +4,7 @@ import ExtraCard from "./ExtraCard";
 const Extra2 = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("/public/customer.json")
+    fetch("/customer.json")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
