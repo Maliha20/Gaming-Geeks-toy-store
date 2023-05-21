@@ -14,11 +14,11 @@ const ExtraCard = ({ review }) => {
           />
         </figure>
         <div className="card-body" data-aos="fade-up">
-          <h2 className="card-title">
+          <h2 className="card-title  text-amber-50">
             {game_title}
             
           </h2>
-          <p>{review_text}</p>
+          <p className=" text-amber-50">{review_text}</p>
           <div className="card-actions justify-end">
           
               <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
