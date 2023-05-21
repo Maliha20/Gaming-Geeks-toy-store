@@ -8,7 +8,7 @@ const Gallery = () => {
         .then(data=>setImages(data))
     },[])
     return (
-        <div className='container mx-auto my-12'>
+        <div className='container mx-auto my-12' data-aos="fade-down">
             
             <div className='gallery'>
                 {
