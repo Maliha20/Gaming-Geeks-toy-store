@@ -1,18 +1,19 @@
 import React from "react";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import './ExtraCard.css'
 const ExtraCard = ({ review }) => {
   const { rating, img, review_text, game_title } = review;
   return (
     <div>
-      <div className="bg-amber-900/10 card md:w-96 h-full bg-base-100 shadow-xl">
-        <figure>
-          <img className="p-5 rounded-xl h-96"
+      <div className="back-color p-6 card md:w-96 h-full bg-base-100 shadow-xl">
+        <figure  data-aos="fade-down">
+          <img className="rounded-xl h-96"
             src={img}
             alt="customer"
           />
         </figure>
-        <div className="card-body">
+        <div className="card-body" data-aos="fade-up">
           <h2 className="card-title">
             {game_title}
             
