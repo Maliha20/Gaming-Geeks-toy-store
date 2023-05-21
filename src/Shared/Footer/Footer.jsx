@@ -10,7 +10,8 @@ const Footer = () => {
           Gaming Geeks <br />
           <small>The ultimate bonding piece</small>
           <br />
-          Providing recreational value since 1997
+          Providing recreational 
+          <br /> value since 1997
         </p>
       </div>
       <div>

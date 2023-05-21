@@ -5,10 +5,10 @@ import scrabble from "../../assets/game url/scrabble.png";
 const Extra1 = () => {
   return (
     <div className="my-64 container mx-auto">
-      <div>
+      <div data-aos="flip-down">
         <h2
           className="text-center text-5xl my-8 font-bold text-yellow-950"
-          data-aos="flip-down"
+         
         >
           Our Best Seller
         </h2>

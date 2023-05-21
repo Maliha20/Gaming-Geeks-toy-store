@@ -1,0 +1,23 @@
+[
+    {
+        "review_id": "789012",
+        "game_title": "I love it",
+        "rating": 5,
+        "img": "https://i.ibb.co/YctJ07s/customer-3.jpg",
+        "review_text": "I absolutely loved this puzzle! The pieces were well-cut and sturdy, making it easy to assemble. The image quality was excellent, with vibrant colors and intricate details. The puzzle provided a good challenge without being too frustrating. It was a great activity for relaxation and concentration. I highly recommend this puzzle to all puzzle enthusiasts."
+      },
+      {
+        "review_id": "345678",
+        "game_title": "I Really enjoyed playing it",
+        "rating": 4,
+        "img": "https://i.ibb.co/jJSRCQh/customer1.jpg",
+        "review_text": "Scrabble is a classic word game that never gets old. I enjoyed the strategic element of forming words and maximizing points. The quality of the tiles and board is top-notch. The game rules are straightforward, and it's easy to learn for both casual and competitive players. The only drawback is that it can be challenging to find opponents who are as skilled and passionate about the game. Overall, Scrabble is a fantastic game for word enthusiasts."
+      },
+      {
+        "review_id": "567890",
+        "game_title": "Awesome!!!",
+        "rating": 4.5,
+        "img": "https://i.ibb.co/KxShVKR/customer2.webp",
+        "review_text": "Carcassonne is a fantastic tile-placement game that offers strategic depth. I love how the game board evolves as you lay down tiles, creating a unique landscape with each play. The components are of high quality, and the artwork is visually appealing. The game is easy to learn, but mastering the tactics requires practice. The only slight downside is that setup and cleanup can take a bit of time. Overall, Carcassonne is a must-have for board game enthusiasts who enjoy strategic gameplay."
+      }
+    ]
