@@ -3,7 +3,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import { useForm } from 'react-hook-form';
 import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
-
+import './UpdateToy.css'
 const UpdateToy = () => {
  const toyUpdate = useLoaderData()
  console.log(toyUpdate)
@@ -38,8 +38,8 @@ const UpdateToy = () => {
     return (
         <div>
 
-        <h4>Update Your Post</h4>
-        <div className='w-96 my-16 container mx-auto'>
+        <h4 className="text-center text-3xl my-6 font-bold text-yellow-950">Update Your Post</h4>
+        <div className='bg-img px-16 py-12 w-full my-16 container mx-auto'>
         <form onSubmit={handleSubmit(handleUpdate)}>
         {errors.exampleRequired && <span>This field is required</span>}
 
@@ -79,7 +79,7 @@ const UpdateToy = () => {
         </div>
         
         <div>
-           <Link  className="container mx-auto grid grid-cols-1 my-5 bg-yellow-900 btn btn-block text-amber-50 p-4 rounded-md"  to="/login/mytoys"> <button>Go Back</button></Link>
+           <Link  className="container mx-auto grid grid-cols-1 my-5 bg-yellow-900/60 btn btn-block text-amber-50 p-4 rounded-md"  to="/login/mytoys"> <button>Go Back</button></Link>
         </div>
         
       </form>
